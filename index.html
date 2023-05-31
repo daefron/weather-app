@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <title>Weather</title>
   </head>
   <body>
     <div id="main">
-      <div id="current">
+      <div class="box" id="current">
         <div id="currentLeft">
           <p id="location"></p>
           <p id="day"></p>
@@ -20,9 +20,11 @@
             <button type="submit">&nbsp</button>
           </form>
         </div>
-        <div id="currentRight" >
-          <img id="condition">
-          <p id="currentTemp"></p>
+        <div id="currentRight">
+          <div id="currentTempHolder">
+            <img id="condition" />
+            <p id="currentTemp"></p>
+          </div>
           <p id="feelsLike"></p>
           <p id="wind"></p>
         </div>
@@ -30,7 +32,3 @@
     </div>
   </body>
 </html>
-<!-- 
-  day, time, temp, feels like, wind, condition
-  day, max, min, wind, condition
- -->

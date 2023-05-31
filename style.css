@@ -7,19 +7,33 @@ body {
 }
 #main {
   width: 100vw;
-  margin-block: 40px;
+  margin-block: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#current {
-  width: fit-content;
+#forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.box {
+  width: 450px;
   padding: 40px;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+#current {
+  margin-bottom: 10px;
+}
+#currentLeft {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 #location {
   margin-block: 0px;
@@ -33,8 +47,12 @@ body {
 #time {
   margin-bottom: 10px;
 }
-#userLocation button {  
-  border-radius: 5px;
+#locationInput {
+  width: 120px;
+}
+#locationInput,
+#userLocation button {
+  border-radius: 3px;
   border-style: none;
 }
 #currentRight {
@@ -42,12 +60,17 @@ body {
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr auto auto;
 }
+#currentTempHolder {
+  display: flex;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
 #currentTemp {
   margin-top: 0px;
   margin-bottom: 10px;
   font-size: 60px;
   font-weight: bold;
-  grid-column-start: 2;
 }
 #condition {
   margin-bottom: 10px;
@@ -55,7 +78,6 @@ body {
   justify-self: right;
   height: auto;
   width: 64px;
-  grid-column-start: 1;
 }
 #feelsLike,
 #wind {
@@ -70,4 +92,22 @@ body {
   grid-column-start: 2;
   grid-row-start: 3;
   margin-bottom: 10px;
+}
+.forecast {
+  padding-block: 20px;
+  display: grid;
+  grid-template-columns: 90px 0.7fr 0.2fr 0.3fr 0.1fr 0.4fr 0.2fr 0.7fr;
+}
+.forecastDay {
+  font-weight: bold;
+}
+.forecastWindImg,
+.forecastRainImg {
+  height: 20px;
+  filter: invert(80%) sepia(3%) saturate(21%) hue-rotate(314deg)
+    brightness(113%) contrast(85%);
+}
+.forecastConditionDay,
+.forecastConditionNight {
+  height: 25px;
 }
