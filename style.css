@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Helvetica;
+  color: white;
+  background-image: url("background.jpg");
+  background-size: 2000px auto;
+}
+#main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#current {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#location {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+#currentRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+}
+#currentTemp {
+  font-size: 40px;
+  font-weight: bold;
+  grid-column-start: 1;
+}
+#condition {
+  height: auto;
+  width: 130px;
+  grid-column-start: 2;
+}
+#feelsLike,
+#wind {
+  margin: 0;
+}

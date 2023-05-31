@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="current">
+        <div id="currentLeft">
+          <p id="location"></p>
+          <p id="day"></p>
+          <p id="time"></p>
+          <form id="userLocation" onsubmit="getUserLocation(); return false">
+            <input id="locationInput" type="text" placeholder="Change city" />
+            <button type="submit">go</button>
+          </form>
+        </div>
+        <div id="currentRight" >
+            <p id="currentTemp"></p>
+            <img id="condition">
+          <p id="feelsLike"></p>
+          <p id="wind"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- 
+  day, time, temp, feels like, wind, condition
+  day, max, min, wind, condition
+ -->
