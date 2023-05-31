@@ -7,37 +7,67 @@ body {
 }
 #main {
   width: 100vw;
+  margin-block: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 #current {
-  width: 70%;
+  width: fit-content;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 #location {
-  margin-bottom: 10px;
+  margin-block: 0px;
   font-size: 30px;
   font-weight: bold;
 }
+#day,
+#time {
+  margin: 0;
+}
+#time {
+  margin-bottom: 10px;
+}
+#userLocation button {  
+  border-radius: 5px;
+  border-style: none;
+}
 #currentRight {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto auto;
 }
 #currentTemp {
-  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 60px;
   font-weight: bold;
-  grid-column-start: 1;
+  grid-column-start: 2;
 }
 #condition {
+  margin-bottom: 10px;
+  align-self: center;
+  justify-self: right;
   height: auto;
-  width: 130px;
-  grid-column-start: 2;
+  width: 64px;
+  grid-column-start: 1;
 }
 #feelsLike,
 #wind {
   margin: 0;
+  justify-self: right;
+}
+#feelsLike {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+#wind {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  margin-bottom: 10px;
 }
