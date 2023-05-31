@@ -103,7 +103,7 @@ function displayWeather(weatherHolder) {
 
     let forecastTemp = document.createElement("p");
     forecastTemp.classList.add("forecastTemp");
-    forecastTemp.textContent = element.min + " / " + element.max;
+    forecastTemp.textContent = element.max + " / " + element.min;
     forecastDiv.appendChild(forecastTemp);
 
     let forecastConditionDay = document.createElement("img");
