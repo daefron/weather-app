@@ -96,7 +96,7 @@ body {
 .forecast {
   padding-block: 20px;
   display: grid;
-  grid-template-columns: 90px 0.7fr 0.2fr 0.3fr 0.1fr 0.4fr 0.2fr 0.7fr;
+  grid-template-columns: 100px 0.6fr 0.2fr 0.3fr 0.1fr 0.4fr 0.2fr 0.5fr;
 }
 .forecastDay {
   font-weight: bold;
@@ -109,5 +109,8 @@ body {
 }
 .forecastConditionDay,
 .forecastConditionNight {
-  height: 25px;
+  height: 30px;
+}
+.forecastWind {
+  text-align: right;
 }

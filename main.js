@@ -40,6 +40,8 @@ function parseForecast(forecastData) {
     condition: forecastData.current.condition.icon,
   };
   weatherHolder.push(currentWeather);
+  console.log(weatherHolder);
+  console.log(forecastData);
   function Weather(date, max, min, wind, rain, conditionDay, conditionNight) {
     this.date = date;
     this.max = max;
@@ -80,7 +82,7 @@ function displayWeather(weatherHolder) {
     weatherHolder.at(0).location;
   document.getElementById("day").textContent = weatherHolder.at(0).day;
   document.getElementById("time").textContent = weatherHolder.at(0).time;
-  document.getElementById("condition").src = weatherHolder.at(0).condition;
+  document.getElementById("condition").src = "https:" + weatherHolder.at(0).condition;
   document.getElementById("currentTemp").textContent = weatherHolder.at(0).temp;
   document.getElementById("feelsLike").textContent =
     "Feels like " + weatherHolder.at(0).feel;
@@ -90,51 +92,51 @@ function displayWeather(weatherHolder) {
   weatherHolder.forEach((element) => {
     if ("location" in element !== true) {
       if (element.date === weatherHolder.at(0).day) {
-      element.date = "Today";
-    }
-    let forecastDiv = document.createElement("div");
-    forecastDiv.classList.add("box", "forecast");
-    main.appendChild(forecastDiv);
+        element.date = "Today";
+      }
+      let forecastDiv = document.createElement("div");
+      forecastDiv.classList.add("box", "forecast");
+      main.appendChild(forecastDiv);
 
-    let forecastDay = document.createElement("p");
-    forecastDay.classList.add("forecastDay");
-    forecastDay.textContent = element.date;
-    forecastDiv.appendChild(forecastDay);
+      let forecastDay = document.createElement("p");
+      forecastDay.classList.add("forecastDay");
+      forecastDay.textContent = element.date;
+      forecastDiv.appendChild(forecastDay);
 
-    let forecastTemp = document.createElement("p");
-    forecastTemp.classList.add("forecastTemp");
-    forecastTemp.textContent = element.max + " / " + element.min;
-    forecastDiv.appendChild(forecastTemp);
+      let forecastTemp = document.createElement("p");
+      forecastTemp.classList.add("forecastTemp");
+      forecastTemp.textContent = element.max + " / " + element.min;
+      forecastDiv.appendChild(forecastTemp);
 
-    let forecastConditionDay = document.createElement("img");
-    forecastConditionDay.classList.add("forecastConditionDay");
-    forecastConditionDay.src = element.conditionDay;
-    forecastDiv.appendChild(forecastConditionDay);
-    
-    let forecastConditionNight = document.createElement("img");
-    forecastConditionNight.classList.add("forecastConditionNight");
-    forecastConditionNight.src = element.conditionNight;
-    forecastDiv.appendChild(forecastConditionNight);
-    
-    let forecastRainImg = document.createElement("img");
-    forecastRainImg.classList.add("forecastRainImg");
-    forecastRainImg.src = "water.svg";
-    forecastDiv.appendChild(forecastRainImg);
+      let forecastConditionDay = document.createElement("img");
+      forecastConditionDay.classList.add("forecastConditionDay");
+      forecastConditionDay.src = "https:" + element.conditionDay;
+      forecastDiv.appendChild(forecastConditionDay);
 
-    let forecastRain = document.createElement("p");
-    forecastRain.classList.add("forecastRain");
-    forecastRain.textContent = element.rain;
-    forecastDiv.appendChild(forecastRain);
+      let forecastConditionNight = document.createElement("img");
+      forecastConditionNight.classList.add("forecastConditionNight");
+      forecastConditionNight.src = "https:" + element.conditionNight;
+      forecastDiv.appendChild(forecastConditionNight);
 
-    let forecastWindImg = document.createElement("img");
-    forecastWindImg.classList.add("forecastWindImg");
-    forecastWindImg.src = "weather-windy.svg";
-    forecastDiv.appendChild(forecastWindImg);
+      let forecastRainImg = document.createElement("img");
+      forecastRainImg.classList.add("forecastRainImg");
+      forecastRainImg.src = "water.svg";
+      forecastDiv.appendChild(forecastRainImg);
 
-    let forecastWind = document.createElement("p");
-    forecastWind.classList.add("forecastWind");
-    forecastWind.textContent = element.wind;
-    forecastDiv.appendChild(forecastWind);
+      let forecastRain = document.createElement("p");
+      forecastRain.classList.add("forecastRain");
+      forecastRain.textContent = element.rain;
+      forecastDiv.appendChild(forecastRain);
+
+      let forecastWindImg = document.createElement("img");
+      forecastWindImg.classList.add("forecastWindImg");
+      forecastWindImg.src = "weather-windy.svg";
+      forecastDiv.appendChild(forecastWindImg);
+
+      let forecastWind = document.createElement("p");
+      forecastWind.classList.add("forecastWind");
+      forecastWind.textContent = element.wind;
+      forecastDiv.appendChild(forecastWind);
     }
   });
 }
