@@ -1,9 +1,12 @@
 body {
+  height: 100vh;
   margin: 0;
   font-family: Helvetica;
   color: white;
   background-image: url("background.jpg");
   background-size: 2000px auto;
+  display: flex;
+  align-items: center;
 }
 #main {
   width: 100vw;
